@@ -15,6 +15,7 @@ class PubTest < MiniTest::Test
     @pub = Pub.new("The Oak", 1000, @drinks)
     @customer1 = Customer.new("Charlie", 3, 30)
     @customer2 = Customer.new("Sam", 10, 17)
+    @customer3 = Customer.new("Alice", 10, 21, 160)
   end
 
 
@@ -48,6 +49,13 @@ class PubTest < MiniTest::Test
     assert_equal(false,@pub.is_customer_legal(@customer2))
   end
 
+  def test_is_drunk__true
+    assert_equal(true,@pub.is_drunk(@customer3))
+  end
+
+  def test_is_drunk__false
+    assert_equal(false, @pub.is_drunk(@customer2))
+  end
 
 
 end
