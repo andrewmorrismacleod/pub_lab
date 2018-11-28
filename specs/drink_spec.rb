@@ -12,7 +12,7 @@ class DrinkTest < MiniTest::Test
 
   def test_pub__price
     drink = Drink.new("beer", 2)
-    assert_equal(2, drink.price)
+    assert_equal(2.0, drink.price)
   end
 
 end
