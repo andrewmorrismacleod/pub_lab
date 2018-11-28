@@ -26,4 +26,12 @@ class Pub
     return customer.drunkenness > 150
   end
 
+  # def stock_take
+  #   stock = Hash.new()
+  #   for drink in @drinks
+  #     drinks_hash = { name: drink.name, stock}
+  #     stock.add()
+  #   end
+  # end
+
 end

@@ -3,13 +3,19 @@ require('minitest/rg')
 
 require_relative('../customer')
 require_relative('../drink')
+require_relative('../food')
 
 class CustomerTest < MiniTest::Test
 
   def setup
     @drink1 = Drink.new("beer", 2, 4)
+
     @customer1 = Customer.new("Charlie", 15, 30)
     @customer2 = Customer.new("Sam", 15, 17)
+    @customer3 = Customer.new("Alice", 10, 21, 160)
+
+    @food1 = Food.new("pie", 2, 10)
+    @food2 = Food.new("chips", 0.50, 5)
   end
 
   def test_customer__name
@@ -38,6 +44,10 @@ class CustomerTest < MiniTest::Test
     assert_equal(4, @customer1.drunkenness)
   end
 
+ def test_buy_food
+   @customer3.buy_food(@food1)
+   assert_equal(150, @customer3.drunkenness)
+ end
 
-  
+
 end

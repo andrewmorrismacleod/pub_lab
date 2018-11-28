@@ -12,10 +12,16 @@ class PubTest < MiniTest::Test
     @drink2 = Drink.new("gin", 3, 17)
     @drink3 = Drink.new("wine", 4, 12)
     @drinks = [@drink1, @drink2, @drink3]
+
+
     @pub = Pub.new("The Oak", 1000, @drinks)
+    @pub2 = Pub.new("The Red Lion", 1000, @drinks)
+
     @customer1 = Customer.new("Charlie", 3, 30)
     @customer2 = Customer.new("Sam", 10, 17)
     @customer3 = Customer.new("Alice", 10, 21, 160)
+
+
   end
 
 
@@ -56,6 +62,11 @@ class PubTest < MiniTest::Test
   def test_is_drunk__false
     assert_equal(false, @pub.is_drunk(@customer2))
   end
+
+  # def test_stock_level_beer
+  #   p found_drink = @pub2.find_drink("beer")
+  #   assert_equal(100, found_drink[:stock])
+  # end
 
 
 end

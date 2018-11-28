@@ -5,7 +5,7 @@ class Food
 
   def initialize(name, price, rej_level)
     @name = name
-    @price = price
+    @price = price.to_f
     @rej_level = rej_level
   end
 
