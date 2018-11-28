@@ -8,9 +8,9 @@ require_relative('../customer')
 class PubTest < MiniTest::Test
 
   def setup
-    @drink1 = Drink.new("beer", 2)
-    @drink2 = Drink.new("gin", 3)
-    @drink3 = Drink.new("wine", 4)
+    @drink1 = Drink.new("beer", 2, 4)
+    @drink2 = Drink.new("gin", 3, 17)
+    @drink3 = Drink.new("wine", 4, 12)
     @drinks = [@drink1, @drink2, @drink3]
     @pub = Pub.new("The Oak", 1000, @drinks)
     @customer1 = Customer.new("Charlie", 3, 30)
@@ -47,5 +47,7 @@ class PubTest < MiniTest::Test
   def test_age_check__false
     assert_equal(false,@pub.is_customer_legal(@customer2))
   end
+
+
 
 end
