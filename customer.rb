@@ -15,6 +15,7 @@ class Customer
   end
 
   def buy_food(food)
+    @wallet -= food.price
     @drunkenness -= food.rej_level
   end
 

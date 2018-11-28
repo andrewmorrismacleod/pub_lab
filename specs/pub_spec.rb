@@ -63,10 +63,14 @@ class PubTest < MiniTest::Test
     assert_equal(false, @pub.is_drunk(@customer2))
   end
 
-  # def test_stock_level_beer
-  #   p found_drink = @pub2.find_drink("beer")
-  #   assert_equal(100, found_drink[:stock])
-  # end
+  def test_stock_count
+    assert_equal(3, @pub.total_stock)
+  end
+
+  def test_remove_stock
+    @pub.remove_drink(@drink3)
+    assert_equal(0, @pub.stock[@drink3.name][:stock])
+  end
 
 
 end
