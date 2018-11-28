@@ -11,14 +11,17 @@ class Pub
 
   def serve_customer(customer, drink)
 
+    if is_customer_legal(customer)
+      @till += drink.price
+      customer.buy_drink(drink)
+    end
 
-
-    @till += drink.price
-    customer.buy_drink(drink)
   end
 
 def is_customer_legal(customer)
+
   return customer.age >=18
+
 end
 
 

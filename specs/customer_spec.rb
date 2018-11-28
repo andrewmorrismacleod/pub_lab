@@ -8,8 +8,8 @@ class CustomerTest < MiniTest::Test
 
   def setup
     @drink1 = Drink.new("beer", 2)
-    @customer1 = Customer.new("Charlie", 15, 17)
-    @customer2 = Customer.new("Sam", 15, 30)
+    @customer1 = Customer.new("Charlie", 15, 30)
+    @customer2 = Customer.new("Sam", 15, 17)
   end
 
   def test_customer__name
@@ -26,7 +26,7 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_age
-    assert_equal(17, @customer1.age)
+    assert_equal(30, @customer1.age)
   end
 
 end
