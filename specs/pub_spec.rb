@@ -40,4 +40,8 @@ class PubTest < MiniTest::Test
     assert_equal(0, @customer1.wallet)
   end
 
+  def test_age_check__true
+    assert(true,@pub.is_customer_legal(@customer1))
+  end
+
 end
