@@ -35,4 +35,9 @@ class PubTest < MiniTest::Test
     assert_equal(1003, @pub.till)
   end
 
+  def test_pub_serve_customer__wallet
+    @pub.serve_customer(@customer1,@drink2)
+    assert_equal(0, @customer1.wallet)
+  end
+
 end

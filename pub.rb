@@ -11,7 +11,8 @@ class Pub
 
   def serve_customer(customer, drink)
     @till += drink.price
-    
+    customer.buy_drink(drink)
+
   end
 
 
