@@ -13,8 +13,8 @@ class PubTest < MiniTest::Test
     @drink3 = Drink.new("wine", 4)
     @drinks = [@drink1, @drink2, @drink3]
     @pub = Pub.new("The Oak", 1000, @drinks)
-    @customer1 = Customer.new("Charlie", 3)
-    @customer2 = Customer.new("Sam", 10)
+    @customer1 = Customer.new("Charlie", 3, 17)
+    @customer2 = Customer.new("Sam", 10, 30)
   end
 
 
