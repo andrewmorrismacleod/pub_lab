@@ -2,17 +2,29 @@ require('minitest/autorun')
 require('minitest/rg')
 
 require_relative('../pub')
+require_relative('../drink')
 
 class PubTest < MiniTest::Test
 
+  def setup
+    @drink1 = Drink.new("beer", 2)
+    @drink2 = Drink.new("gin", 3)
+    @drink3 = Drink.new("wine", 4)
+    @drinks = [@drink1, @drink2, @drink3]
+    @pub = Pub.new("The Oak", 1000, @drinks)
+  end
+
+
   def test_pub__name
-    pub = Pub.new("The Oak", 1000)
-    assert_equal("The Oak", pub.name)
+    assert_equal("The Oak", @pub.name)
   end
 
   def test_pub__till
-    pub = Pub.new("The Oak", 1000)
-    assert_equal(1000.0, pub.till)
+    assert_equal(1000.0, @pub.till)
+  end
+
+  def test_pub__drinks
+    assert_equal("gin", @pub.drinks[1].name)
   end
 
 end
