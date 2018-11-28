@@ -1,10 +1,11 @@
 
 class Pub
 
-  attr_reader :name
+  attr_reader :name, :till
 
-  def initialize(name)
+  def initialize(name, till)
     @name = name
+    @till = till.to_f
   end
 
 end
