@@ -9,4 +9,9 @@ class Pub
     @drinks = drinks
   end
 
+  def serve_customer(customer, drink)
+    @till += drink.price
+  end
+
+
 end
